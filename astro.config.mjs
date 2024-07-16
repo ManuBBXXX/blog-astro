@@ -13,5 +13,5 @@ export default defineConfig({
     mdx(),
   ],
   output: "static",
-  adapter: vercel(),
+  adapter: vercel({ imageService: true, webAnalytics: true }),
 });
