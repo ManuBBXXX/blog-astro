@@ -1,0 +1,25 @@
+---
+//export const prerender = true;
+import { getCollection } from "astro:content";
+import { formatDate } from "../../utils";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+// FOR STATIC VERCEL SITE
+// export async function getStaticPaths() {
+//   const allBlogArticles = await getCollection("blog");
+//   return allBlogArticles.map((entry) => ({
+//     params: { slug: entry.slug },
+//     props: { entry },
+//   }));
+// }
+
+// const { entry } = Astro.props;
+---
+
+<MainLayout>
+  <!-- <h2>{entry.data.title}</h2>
+  <p>{formatDate(entry.data.pubDate)}</p>
+  <p>{entry.data.description}</p> -->
+
+  Article
+</MainLayout>
