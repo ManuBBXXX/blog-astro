@@ -1,34 +1,26 @@
 ---
-const { currentPage, totalPages } = Astro.props;
+const { currentPage, totalPages, disablePrevious, disableNext } = Astro.props;
 
 const prevPage = currentPage > 1 ? currentPage - 1 : null;
 const nextPage = currentPage < totalPages ? currentPage + 1 : null;
 ---
 
 <div class="flex justify-between my-10">
-  {
-    prevPage ? (
-      <a
-        href={`?page=${prevPage}`}
-        class="inline-block bg-indigo-100 px-3 py-2 hover:bg-indigo-600 hover:text-white rounded-lg transition-transform hover:scale-105"
-      >
-        Précédent
-      </a>
-    ) : (
-      <span class="invisible">Précédent</span>
-    )
-  }
+  <a
+    href={`?page=${prevPage}`}
+    class={disablePrevious
+      ? "inline-block bg-gray-100 px-3 py-2 text-gray-1000 rounded-lg pointer-events-none"
+      : "inline-block bg-indigo-100 px-3 py-2 hover:bg-indigo-600 hover:text-white rounded-lg transition-transform hover:scale-105"}
+  >
+    Précédent
+  </a>
 
-  {
-    nextPage ? (
-      <a
-        href={`?page=${nextPage}`}
-        class="inline-block bg-indigo-100 px-3 py-2 hover:bg-indigo-600 hover:text-white rounded-lg transition-transform hover:scale-105"
-      >
-        Suivant
-      </a>
-    ) : (
-      <span class="invisible">Suivant</span>
-    )
-  }
+  <a
+    href={`?page=${nextPage}`}
+    class={disableNext
+      ? "inline-block bg-gray-100 px-3 py-2 text-gray-1000 rounded-lg pointer-events-none"
+      : "inline-block bg-indigo-100 px-3 py-2 hover:bg-indigo-600 hover:text-white rounded-lg transition-transform hover:scale-105"}
+  >
+    Suivant
+  </a>
 </div>

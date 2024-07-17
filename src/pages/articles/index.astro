@@ -22,9 +22,15 @@ const articlesForPage = allBlogArticles.slice(
 ---
 
 <MainLayout title="Articles, stories, and news">
+  <SearchForm />
   <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-    {allBlogArticles.map((article) => <ArticleCard article={article} />)}
+    {articlesForPage.map((article) => <ArticleCard article={article} />)}
   </div>
 
-  <Pagination currentPage={currentPage} totalPages={totalPages} />
+  <Pagination
+    currentPage={currentPage}
+    totalPages={totalPages}
+    disablePrevious={currentPage === 1}
+    disableNext={currentPage === totalPages}
+  />
 </MainLayout>
