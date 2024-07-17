@@ -1,77 +1,155 @@
 ---
-title: "LEGO Technic Supercars: Engineering at Your Fingertips"
+title: "LEGO Technic Supercars : L'ingénierie au bout des doigts"
 pubDate: 2023-03-25
-description: "Explore the fascinating world of LEGO Technic Supercars, combining automotive passion and creativity."
+description: "Découvrez le monde fascinant des supercars LEGO Technic, alliant passion automobile et créativité."
 author: "Émilie Dupont"
 image:
-  url: "lego-technic-supercar.png"
-  alt: "Assembled LEGO Technic Supercar set"
-tags: ["LEGO", "Technic", "supercars", "modeling", "engineering"]
-slug: "lego-technic-supercars-engineering-at-your-fingertips"
+  url: "911.webp"
+  alt: "Set LEGO Technic Supercar assemblé"
+tags: ["LEGO", "Technic", "supercars", "modélisme", "ingénierie"]
+slug: "lego-technic-supercars-ingenierie-au-bout-des-doigts"
 ---
 
-# 1. LEGO Technic Supercars: Engineering at Your Fingertips
+import { Image } from "astro:assets";
 
-## 1.1 The Evolution of LEGO Technic
+<article className="max-w-3xl mx-auto px-4 py-8">
+  <h1 className="text-4xl font-bold mb-8 text-center">LEGO Technic Supercars : L'ingénierie au bout des doigts</h1>
 
-LEGO Technic has come a long way since its introduction, now offering **highly detailed and functional models of supercars**.
+<Image
+  src="https://images.brickset.com/sets/images/42115-1.jpg"
+  alt="Set LEGO Technic Supercar assemblé"
+  width={1200}
+  height={800}
+  format="webp"
+  quality={80}
+  className="w-full rounded-lg shadow-lg mb-8"
+  loading="eager"
+/>
 
-## 1.2 Impact on LEGO and Automotive Enthusiasts
+<section className="mb-12">
+  <h2 className="text-3xl font-semibold mb-4">L'évolution des LEGO Technic</h2>
+  <p className="text-lg mb-4">
+    Les LEGO Technic ont parcouru un long chemin depuis leur introduction,
+    offrant aujourd'hui des modèles de supercars hautement détaillés et
+    fonctionnels.
+  </p>
+  <p className="text-lg">
+    Ces sets ont comblé le fossé entre la construction de jouets et l'ingénierie
+    automobile, inspirant aussi bien les jeunes constructeurs que les adultes
+    passionnés.
+  </p>
+</section>
 
-These sets have bridged the gap between toy construction and automotive engineering, **inspiring both young and adult builders**.
+<section className="mb-12 bg-gray-100 p-6 rounded-lg">
+  <h2 className="text-3xl font-semibold mb-4">
+    Qu'est-ce qui rend les supercars LEGO Technic spéciales ?
+  </h2>
+  <div className="grid md:grid-cols-2 gap-6">
+    <div>
+      <h3 className="text-xl font-medium mb-2">Réalisme impressionnant</h3>
+      <p className="text-lg">
+        Les supercars LEGO Technic offrent une reproduction fidèle des
+        mécanismes réels, des boîtes de vitesses fonctionnelles aux systèmes de
+        suspension.
+      </p>
+    </div>
+    <div>
+      <h3 className="text-xl font-medium mb-2">Défi de construction</h3>
+      <p className="text-lg">
+        Ces sets proposent des constructions complexes qui défient et engagent
+        les passionnés, offrant une expérience gratifiante.
+      </p>
+    </div>
+  </div>
+</section>
 
-# 2. What Makes LEGO Technic Supercars Special?
+<section className="mb-12">
+  <h2 className="text-3xl font-semibold mb-6">
+    Valeur éducative des supercars LEGO Technic
+  </h2>
+  <div className="grid md:grid-cols-3 gap-6">
+    <div className="bg-blue-100 p-4 rounded-lg">
+      <h3 className="text-xl font-medium mb-2">Principes d'ingénierie</h3>
+      <p className="text-lg">
+        Les constructeurs acquièrent des connaissances sur les concepts
+        d'ingénierie automobile grâce à une expérience pratique.
+      </p>
+    </div>
+    <div className="bg-green-100 p-4 rounded-lg">
+      <h3 className="text-xl font-medium mb-2">Résolution de problèmes</h3>
+      <p className="text-lg">
+        La nature complexe de ces sets aide à améliorer la réflexion logique et
+        la conscience spatiale.
+      </p>
+    </div>
+    <div className="bg-purple-100 p-4 rounded-lg">
+      <h3 className="text-xl font-medium mb-2">Créativité</h3>
+      <p className="text-lg">
+        Ces modèles encouragent les constructeurs à imaginer et concevoir leurs
+        propres designs de supercars.
+      </p>
+    </div>
+  </div>
+</section>
 
-## 2.1 Impressive Realism
+<section className="mb-12">
+  <h2 className="text-3xl font-semibold mb-6">Modèles phares</h2>
+  <div className="grid md:grid-cols-2 gap-8">
+    <div>
+      <Image
+        src="/images/911.webp"
+        alt="LEGO Technic Porsche 911 GT3 RS"
+        width={800}
+        height={600}
+        format="webp"
+        quality={80}
+        className="w-full rounded-lg shadow-md mb-4"
+        loading="lazy"
+      />
+      <h3 className="text-xl font-medium mb-2">Porsche 911 GT3 RS</h3>
+      <p className="text-lg">
+        Ce modèle présente une boîte de vitesses PDK fonctionnelle et un moteur
+        détaillé, capturant l'essence de l'ingénierie Porsche.
+      </p>
+    </div>
+    <div>
+      <Image
+        src="/images/chiron.jpeg"
+        alt="LEGO Technic Bugatti Chiron"
+        width={800}
+        height={600}
+        format="webp"
+        quality={80}
+        className="w-full rounded-lg shadow-md mb-4"
+        loading="lazy"
+      />
+      <h3 className="text-xl font-medium mb-2">Bugatti Chiron</h3>
+      <p className="text-lg">
+        Connu pour son moteur W16 complexe et son aileron arrière réglable, ce
+        set capture la sophistication de la supercar Bugatti.
+      </p>
+    </div>
+  </div>
+</section>
 
-LEGO Technic Supercars offer **faithful reproduction of real mechanisms**, from working gearboxes to suspension systems.
+<section className="mb-12">
+  <h2 className="text-3xl font-semibold mb-4">
+    L'avenir des supercars LEGO Technic
+  </h2>
+  <p className="text-lg mb-4">
+    LEGO continue d'innover dans sa gamme Technic, promettant des modèles encore
+    plus détaillés et fonctionnels à l'avenir.
+  </p>
+  <p className="text-lg">
+    Avec l'évolution de la technologie, nous pouvons nous attendre à voir des
+    fonctionnalités électroniques intégrées et peut-être même des éléments de
+    réalité augmentée dans les futurs sets.
+  </p>
+</section>
 
-## 2.2 Building Challenge
-
-These sets provide **complex builds that challenge and engage enthusiasts**, offering a rewarding experience.
-
-# 3. The Educational Value of LEGO Technic Supercars
-
-## 3.1 Learning Engineering Principles
-
-Builders gain insights into **automotive engineering concepts** through hands-on experience.
-
-## 3.2 Developing Problem-Solving Skills
-
-The complex nature of these sets helps in **enhancing logical thinking and spatial awareness**.
-
-# 4. Flagship Models
-
-## 4.1 Porsche 911 GT3 RS
-
-This model features a **working PDK gearbox and detailed engine**.
-
-## 4.2 Bugatti Chiron
-
-Known for its **intricate W16 engine and adjustable rear wing**.
-
-## 4.3 Lamborghini Sián FKP 37
-
-Showcases **scissor doors and a replica of the V12 engine**.
-
-# 5. The Building Experience
-
-## 5.1 Detailed Instructions
-
-LEGO provides **comprehensive step-by-step guides**, often in the style of real car manuals.
-
-## 5.2 Specialized Technic Pieces
-
-These sets use **unique technical pieces** that allow for complex mechanical functions.
-
-# 6. Beyond Building: The LEGO Technic Supercar Community
-
-## 6.1 Online Forums and Groups
-
-Enthusiasts share their builds, modifications, and tips on platforms like **Reddit and dedicated LEGO forums**.
-
-## 6.2 Custom Creations
-
-Many builders use these sets as inspiration to **create their own unique supercar designs**.
-
-LEGO Technic Supercars are more than just toys. They represent a fascinating gateway to the world of automotive engineering, accessible to enthusiasts of all ages.
+  <div className="bg-gray-200 p-6 rounded-lg">
+    <p className="text-xl font-medium text-center">
+      Les supercars LEGO Technic ouvrent la voie à une nouvelle ère de modélisme, promettant des expériences de construction toujours plus impressionnantes et immersives pour les passionnés d'automobiles et d'ingénierie.
+    </p>
+  </div>
+</article>

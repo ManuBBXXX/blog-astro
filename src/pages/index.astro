@@ -27,7 +27,13 @@ const otherArticles = allBlogArticles.slice(1);
 
       <SearchForm />
     </div>
-    <MostRecentArticle article={allBlogArticles[0]} />
+    <MostRecentArticle
+      article={allBlogArticles.find(
+        (article) =>
+          article.slug ===
+          "lego-technic-supercars-ingenierie-au-bout-des-doigts"
+      ) ?? allBlogArticles[0]}
+    />
   </div>
 
   <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
