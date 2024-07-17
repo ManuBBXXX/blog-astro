@@ -1,67 +1,115 @@
 ---
-// Vous pouvez ajouter des imports ou du code Astro ici si nécessaire
+import { getCollection } from "astro:content";
+import { capitalizeFirstLetter } from "../utils";
+
+const currentYear = new Date().getFullYear();
+
+const allPosts = await getCollection("blog");
+const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))];
+
+// Trier les tags par ordre alphabétique
+allTags.sort((a, b) => a.localeCompare(b));
+
+const socialLinks = [
+  {
+    name: "Twitter",
+    url: "https://twitter.com/your_account",
+    icon: "fab fa-twitter",
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/your_account",
+    icon: "fab fa-github",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://linkedin.com/in/your_profile",
+    icon: "fab fa-linkedin",
+  },
+];
 ---
 
-<footer class="bg-indigo-900 text-white">
-  <div class="container mx-auto mt-10 max-w-screen-xl px-8">
-    <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="mt-10">
-        <h3 class="text-xl font-semibold mb-4">À propos</h3>
-        <p class="text-white text-sm">
-          TechPeople est un blog pour les passionnés de technologie. Nous
-          publions des articles, des histoires et des tutoriels sur les
-          dernières tendances et avancées technologiques.
+<footer class="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-12">
+  <div class="container mx-auto max-w-6xl px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="space-y-4">
+        <h3 class="text-2xl font-bold mb-4 relative">
+          About
+          <span
+            class="absolute bottom-0 left-0 w-12 h-1 bg-pink-500 rounded-full"
+          ></span>
+        </h3>
+        <p class="text-gray-300 leading-relaxed">
+          TechPeople is your source of information on the latest technology
+          trends. We explore the digital future through insightful articles and
+          in-depth analyses.
         </p>
       </div>
-      <div class="mt-10">
-        <h3 class="text-xl font-semibold mb-4">Catégories</h3>
-        <ul class="text-white text-sm">
-          <li class="mb-2">
-            <a href="#">Tech</a>
-          </li>
-          <li class="mb-2">
-            <a href="#">Programmation</a>
-          </li>
-          <li class="mb-2">
-            <a href="#">Gadgets</a>
-          </li>
-          <li class="mb-2">
-            <a href="#">Matériel</a>
-          </li>
-          <li class="mb-2">
-            <a href="#">Logiciel</a>
-          </li>
-          <li class="mb-2">
-            <a href="#">RV</a>
-          </li>
-          <li class="mb-2">
-            <a href="#">Smartphones</a>
-          </li>
-          <li class="mb-2">
-            <a href="#">Appareils photo</a>
-          </li>
-          <li class="mb-2">
-            <a href="#">Drones</a>
-          </li>
-        </ul>
+      <div>
+        <h3 class="text-2xl font-bold mb-4 relative">
+          Categories
+          <span
+            class="absolute bottom-0 left-0 w-12 h-1 bg-pink-500 rounded-full"
+          ></span>
+        </h3>
+        <div class="grid grid-cols-2 gap-2">
+          {
+            allTags.map((tag) => (
+              <a
+                href={`/articles/tag/${tag}`}
+                class="text-gray-300 hover:text-yellow-500 hover:scale-105 hover:font-bold hover:underline transition duration-300 ease-in-out"
+              >
+                {capitalizeFirstLetter(tag)}
+              </a>
+            ))
+          }
+        </div>
       </div>
-      <div class="mt-10">
-        <h3 class="text-xl font-semibold mb-4">Contact</h3>
-        <ul class="text-white text-sm">
-          <li class="mb-2">
-            <a href="#">Email</a>
-          </li>
-          <li class="mb-2">
-            <a href="#">Twitter</a>
-          </li>
-          <li class="mb-2">
-            <a href="#">Facebook</a>
-          </li>
-          <li class="mb-2">
-            <a href="#">Instagram</a>
-          </li>
-        </ul>
+      <div>
+        <h3 class="text-2xl font-bold mb-4 relative">
+          Follow Us
+          <span
+            class="absolute bottom-0 left-0 w-12 h-1 bg-pink-500 rounded-full"
+          ></span>
+        </h3>
+        <div class="flex space-x-4">
+          {
+            socialLinks.map((link) => (
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-300 hover:text-white transition duration-300 ease-in-out transform hover:scale-110"
+              >
+                <i class={`${link.icon} text-2xl`} />
+              </a>
+            ))
+          }
+        </div>
       </div>
+    </div>
+    <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-300">
+      <p>&copy; {currentYear} TechPeople. All rights reserved.</p>
     </div>
   </div>
 </footer>
+
+<style>
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .hover\:animate-pulse:hover {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+</style>
+
+<script>
+  // Add JavaScript here if necessary
+</script>

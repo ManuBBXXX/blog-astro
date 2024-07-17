@@ -7,4 +7,8 @@ function formatDate(date: Date) {
   return new Date(date).toLocaleDateString(undefined, options);
 }
 
-export { formatDate };
+const capitalizeFirstLetter = (str: string) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+export { formatDate, capitalizeFirstLetter };

@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { capitalizeFirstLetter } from "../utils";
+
+const { tags } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-2">
+  {
+    tags.map((tag: string, index: number) => (
+      <span
+        class={
+          index % 2 === 0
+            ? "px-2 py-1 bg-green-500 text-white rounded-full text-xs hover:opacity-90"
+            : "px-2 py-1 bg-indigo-500 text-white rounded-full text-xs hover:opacity-90"
+        }
+      >
+        <a href={`/articles/tag/${tag}`}>#{capitalizeFirstLetter(tag)}</a>
+      </span>
+    ))
+  }
+</div>
